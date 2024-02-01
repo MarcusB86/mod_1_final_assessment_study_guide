@@ -1,5 +1,11 @@
 // Write a function that takes a number as an argument and returns 'even' or 'odd'.
-
+function checkIfEven(num) {
+    if(num % 2 === 0) {
+        return 'even';
+    } else {
+        return 'odd';
+    }
+}
 // console.log(evenOrOdd(5)); // Output: 'odd'
 // console.log(evenOrOdd(4)); // Output: 'even'
 
