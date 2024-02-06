@@ -6,6 +6,7 @@ function checkIfEven(num) {
         return 'odd';
     }
 }
+console.log(checkIfEven(7));
 // console.log(evenOrOdd(5)); // Output: 'odd'
 // console.log(evenOrOdd(4)); // Output: 'even'
 
