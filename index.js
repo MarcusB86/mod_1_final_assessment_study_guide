@@ -90,7 +90,7 @@ console.log(getFirstElement([2, 3])); // Output: 2
 
 // Write a function to get the last element of an array.
 function getLastElement(arr) {
-    return arr.pop();
+    return arr[arr.length - 1];
 }
 
 console.log(getLastElement([1, 2, 3])); // Output: 3
@@ -100,7 +100,10 @@ console.log(getLastElement([1, 2, 3, 4])); // Output: 4
 
 // Build a function to replace an element at a specific index in an array and returns the altered array.
 function replaceElementAtIndex (arr, index, newValue) {
-    return arr.splice(arr, index, newValue);
+    if (index >= 0 && index < arr.length) {
+        arr[index] = newValue
+    }
+    return arr;
 }
 
 console.log(replaceElementAtIndex([1, 2, 3], 1, 5)); // Output: [1, 5, 3]
@@ -110,7 +113,8 @@ console.log(replaceElementAtIndex([1, 2, 3], 2, 6)); // Output: [1, 5, 6]
 
 // Develop a function that removes an element from the beginning of an array.
 function removeFirstElement(arr) {
-    return arr.shift([1, 2, 3]);
+    arr.shift();
+    return arr;
 }
 
 console.log(removeFirstElement([1, 2, 3])); // Output: [2, 3]
@@ -130,6 +134,8 @@ console.log(removeLastElement([1, 2, 3, 4])); // Output: 4
 
 // Implement a function to remove an element at a given index in an array and returns the input array.
 function removeElementAtIndex(arr, index) {
+    arr.splice(index, 1);
+    return arr;
 
 }
 
@@ -150,7 +156,7 @@ console.log(toUpperCaseString("world")); // Output: 'WORLD'
 
 // Create a function to properly capitalize each word in a string of words.
 function capitalizeWords(str) {
-    return str.replaceAll(" ", " ").toUpperCase();
+    // return str.split(" ").replaceAll(" ", " ").toUpperCase().join("");
 }
 
 console.log(capitalizeWords("hello world")); // Output: 'Hello World'
@@ -160,12 +166,13 @@ console.log(capitalizeWords("whats up joe?")); // Output: 'Whats Up Joe?'
 
 // Develop a function that returns the element at the middle index of an array.
 function getMidIndexElement(arr) {
+    return arr.length / 2;
 
 }
 
-// console.log(getMidIndexElement([1, 2, 3, 4, 5])); // Output: 3
+console.log(getMidIndexElement([1, 2, 3, 4, 5])); // Output: 3
 
-// console.log(getMidIndexElement([1, 2, 3, 4, 5, 6, 7])); // Output: 4
+console.log(getMidIndexElement([1, 2, 3, 4, 5, 6, 7])); // Output: 4
 
 // ------------------------------------------------------------
 
@@ -293,6 +300,9 @@ console.log(oddNumbersUsingFilter([2, 3, 4, 5, 6, 7])); // Output: [3, 5 ,7]
 // ------------------------------------------------------------
 
 // Develop a function to set a key in an object to a value if it doesn't exist, and return the object. If the key exists, return the object as is.
+// function setKeyValueInObject(obj, key, value) {
+//     if (!Object.hasOwn()
+// }
 
 // console.log(setKeyValueInObject({ key1: 'value1' }, 'key2', 'value2')); 
 // Output: { key1: 'value1', key2: 'value2' }
@@ -303,6 +313,13 @@ console.log(oddNumbersUsingFilter([2, 3, 4, 5, 6, 7])); // Output: [3, 5 ,7]
 // ------------------------------------------------------------
 
 // Create a function to return a new array with only unique elements from an array with duplicate elements.
+// function uniqueElementsArray(arr) {
+//    const unique = {};
+//    for (let i = 0; i < arr.length; i++) {
+//     unique[arr[i]] = true;
+//   }
+//   return Object.keys(unique.map(elem => Number(elem)));
+// }
 
 // console.log(uniqueElementsArray([1, 2, 2, 3])); // Output: [1, 2, 3]
 // console.log(uniqueElementsArray([1, 2, 2, 3, 3, 4, 3, 2])); // Output: [1, 2, 3, 4]
